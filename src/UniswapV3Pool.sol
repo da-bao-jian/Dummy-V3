@@ -1,4 +1,7 @@
-pragma solidity ^0.8.14
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.14;
+import './lib/Tick.sol';
+import './lib/Position.sol';
 
 contract UniswapV3Pool {
     using Tick for mapping(int24 => Tick.Info);
@@ -35,13 +38,13 @@ contract UniswapV3Pool {
         uint160 sqrtPriceX96,
         int24 tick
     ) {
-        token0 = token0_
-        token1 = token0_	
+        token0 = token0_;
+        token1 = token1_;
 
         slot0 = Slot0({
             sqrtPriceX96: sqrtPriceX96,
             tick: tick
-        })
+        });
     }
 
     function mint(
@@ -85,14 +88,14 @@ contract UniswapV3Pool {
         if (amount1 > 0 && balance1Before + amount1 > balance1())
             revert InsufficientInputAmount();
         
-        emit Mint(msg.sender, owner, lowerTick, upperTick, amount, amount0, amount1)
+        emit Mint(msg.sender, owner, lowerTick, upperTick, amount, amount0, amount1);
     }
 
     function balance0() internal returns (uint256 balance) {
-        balance = IERC20(token0).balanceOf(address(this))
+        balance = IERC20(token0).balanceOf(address(this));
     }
     function balance1() internal returns (uint256 balance) {
-        balance = IERC20(token1).balanceOf(address(this))
+        balance = IERC20(token1).balanceOf(address(this));
     }
 
     function swap(
