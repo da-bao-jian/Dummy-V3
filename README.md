@@ -1,3 +1,3 @@
 # Dummy-V3
 
-A simplified UniV3 implementatino
+A simplified UniV3 implementation
