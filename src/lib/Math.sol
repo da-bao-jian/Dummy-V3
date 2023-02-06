@@ -2,7 +2,7 @@
 pragma solidity ^0.8.14;
 
 import "./FixedPoint96.sol";
-import "prb-math/PRBMath.sol";
+import "prb-math/Core.sol";
 
 library Math {
     /// @notice Calculates amount0 delta between two prices
@@ -44,6 +44,7 @@ library Math {
         );
     }
 
+    // see https://uniswapv3book.com/docs/milestone_2/output-amount-calculation/ for calculating the next price
     function getNextSqrtPriceFromInput(
         uint160 sqrtPriceX96,
         uint128 liquidity,
@@ -104,7 +105,7 @@ library Math {
         uint256 b,
         uint256 denominator
     ) internal pure returns (uint256 result) {
-        result = PRBMath.mulDiv(a, b, denominator);
+        result = mulDiv(a, b, denominator);
         if (mulmod(a, b, denominator) > 0) {
             require(result < type(uint256).max);
             result++;

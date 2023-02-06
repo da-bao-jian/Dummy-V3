@@ -30,7 +30,7 @@ contract UniswapV3PoolTest is Test {
 		token1 = new ERC20Mintable('USDC', 'USDC', 18);
 	}
 
-	function testMintSuccess() public {
+	function testMintSuccess() public pure {
 		// deposit 1 ETH and 5000 USDC
 		TestCaseParams memory params = TestCaseParams({
 			wethBalance: 1 ether,

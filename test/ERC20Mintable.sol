@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MIT
 import 'solmate/tokens/ERC20.sol';
 
 contract ERC20Mintable is ERC20 {
