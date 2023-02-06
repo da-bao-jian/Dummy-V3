@@ -5,3 +5,7 @@
 [submodule "lib/solmate"]
 	path = lib/solmate
 	url = https://github.com/rari-capital/solmate
+[submodule "lib/prb-contracts"]
+	path = lib/prb-contracts
+	url = https://github.com/paulrberg/prb-contracts
+	branch = v4.1.1
